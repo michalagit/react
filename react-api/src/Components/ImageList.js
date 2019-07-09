@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ImageCard from './ImageCard';
 import './styles.scss';
 
 const ImageList = ({ data }) => (
@@ -7,11 +8,11 @@ const ImageList = ({ data }) => (
     <h3>Image List:</h3>
     <div className='image-list'>
       {data.map(image => 
-        <div
+        <ImageCard
           key={image.id}
-          className={'image'}
-          style={{ backgroundImage: `url(${image.urls.regular})` }}
-          />
+          src={image.urls.regular}
+          description={image.description} 
+        />
         )}
     </div>
   </>
