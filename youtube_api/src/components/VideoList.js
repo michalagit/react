@@ -1,7 +1,17 @@
 import React from 'react'
 
-const VidoList = props => (
-  <h1>VidoItem</h1>
+import VideoItem from './VideoItem';
+
+const VidoList = ({videos, onVideoClick})=> (
+  <div className="ui relaxed divided list">
+    {videos.map(video => 
+      <VideoItem
+        key={video.id.videoId}
+        video={video}
+        onItemClick={onVideoClick}
+      />
+    )}
+  </div>
 )
 
 VidoList.propTypes = {
